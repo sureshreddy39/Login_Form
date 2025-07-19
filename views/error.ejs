@@ -1,0 +1,14 @@
+
+
+
+<%- contentFor('body') %>
+<div class="card" style="text-align: center; max-width: 600px; margin: 40px auto;">
+    <h2 style="color: var(--danger-color);">Error</h2>
+    <p style="margin: 20px 0;"><%= message %></p>
+    <% if (process.env.NODE_ENV === 'development' && error.stack) { %>
+        <pre style="text-align: left; background: #f8f9fa; padding: 15px; border-radius: 4px; overflow-x: auto;">
+            <%= error.stack %>
+        </pre>
+    <% } %>
+    <a href="/" class="btn btn-primary" style="margin-top: 20px;">Go Home</a>
+</div> 

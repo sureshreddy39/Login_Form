@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <style>
+        .lead {
+            font-size: 1.25rem;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+        }
+    
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+    
+        .feature-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+        }
+    
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+    
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+    
+        @media (max-width: 768px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+    
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Welcome to User Management System</h1>
+        <p class="lead">A secure and efficient way to manage user information.</p>
+        
+        <div class="features">
+            <div class="feature-card">
+                <h3>Secure Authentication</h3>
+                <p>Login and register with confidence using our secure authentication system.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>User Management</h3>
+                <p>Easily manage user information with our intuitive interface.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>Data Protection</h3>
+                <p>Your data is protected with industry-standard security measures.</p>
+            </div>
+        </div>
+    
+        <div class="cta-buttons">
+            <% if (typeof userId !== 'undefined' && userId) { %>
+                <a href="/dashboard" class="btn btn-primary">Go to Dashboard</a>
+                <a href="#" class="btn btn-danger" onclick="logout()">Logout</a>
+            <% } else { %>
+                <a href="/login" class="btn btn-primary">Login</a>
+                <a href="/register" class="btn btn-success">Register</a>
+            <% } %>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
+
+
